@@ -1,0 +1,101 @@
+You will be given a number N. You have to code a hollow diamond looking pattern.
+
+The output for N=5 is given in the following image.
+*********
+**** ****
+***   ***
+**     **
+*       *
+**     **
+***   ***
+**** ****
+*********
+
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner a=new Scanner(System.in);
+        int n,copy1;
+        n=a.nextInt();
+        int p=(2*n)-1;
+        copy1=n;
+        int copy2=p,k=1,star,space;
+        n-=1;
+        for(int i=1;i<=copy1;i++)
+        {
+            if(i==1)
+            {
+                star=p;
+                while(star!=0)
+                {
+                    System.out.print("*");
+                    star--;
+                }
+            }
+            else 
+            {
+                star=n;
+                while(star!=0)
+                {
+                    System.out.print("*");
+                    star--;
+                }
+                space=k;
+                while(space!=0)
+                {
+                    System.out.print(" ");
+                    space--;
+                }
+                k+=2;
+                star=n;
+                while(star!=0)
+                {
+                    System.out.print("*");
+                    star--;
+                }
+                n--;
+            }
+            System.out.println();
+        }
+
+        k=2;
+        for(int i=2;i<=copy1;i++)
+        {
+            if(i==copy1)
+            {
+                star=p;
+                while(star!=0)
+                {
+                    System.out.print("*");
+                    star--;
+                }
+            }
+            else
+            {
+                star=k;
+                while(star!=0)
+                {
+                    System.out.print("*");
+                    star--;
+                }
+                space=p-(k*2);
+                while(space!=0)
+                {
+                    System.out.print(" ");
+                    space--;
+                }
+                star=k;
+                while(star!=0)
+                {
+                    System.out.print("*");
+                    star--;
+                }
+                k+=1;
+            }
+            System.out.println();
+        }       
+
+    }
+}
