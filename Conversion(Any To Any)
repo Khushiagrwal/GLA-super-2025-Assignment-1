@@ -1,0 +1,43 @@
+Take sb (source number system base), db (destination number system base) and sn (number in source format). Write a function that converts sn to its counterpart in
+destination number system. Print the value returned.
+
+Input 
+8
+2 
+33
+
+Output 
+11011
+
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner a=new Scanner(System.in);
+        int sb,db,n;
+        sb =a.nextInt();
+        db =a.nextInt();
+        n =a.nextInt();
+        int mul=1,sum=0;
+        while(n!=0)
+        {
+            int r=n%10; // destination 
+            sum=sum+r*mul;
+            n/=10; // destination
+            mul=mul*sb;  // source
+        }
+        n=sum;
+        sum=0;
+        mul=1;
+        while(n!=0)
+        {
+            int r=n%db; // destination 
+            sum=sum+r*mul;
+            n/=db; // destination 
+            mul=mul*10;  // source
+        }
+        System.out.println(sum);
+    }
+}
+
