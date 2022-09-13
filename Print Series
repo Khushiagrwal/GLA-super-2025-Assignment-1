@@ -1,0 +1,40 @@
+Take the following as input.
+
+A number (N1)
+A number (N2)
+Write a function which prints first N1 terms of the series 3n + 2 which are not multiples of N2.
+
+Input
+10  
+4 
+Output 
+5 
+11 
+14 
+17 
+23 
+26 
+29 
+35 
+38 
+41
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner a=new Scanner(System.in);
+        int n1=a.nextInt();
+        int n2=a.nextInt();
+        int n=n1,p=1;
+        while(n!=0)
+        {
+            if (((3*p)+2)%n2!=0)
+            {
+                System.out.println(((3*p)+2));
+                n--;
+            }
+            p++;
+        }
+
+    }
+}
