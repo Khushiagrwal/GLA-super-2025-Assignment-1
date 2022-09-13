@@ -1,0 +1,57 @@
+Take N (number of rows), print the following pattern (for N = 4).
+
+                       1           1
+                       1 2       2 1  
+                       1 2 3   3 2 1
+                       1 2 3 4 3 2 1   
+ import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner a=new Scanner(System.in);
+        int n=a.nextInt();
+        int copy=1,space;
+        int p=(2*n)-1;
+        int num,l;
+        while(copy<n)
+        {
+            l=1;
+            num=copy;
+            while(num!=0)
+            {
+                System.out.print(l + "  ");
+                num--;
+                l++;
+            }
+            l-=1;
+            space=p-(copy*2);
+            while(space>0)
+            {
+                System.out.print("   ");
+                space--;
+            }
+            num=copy;
+            while(num!=0)
+            {
+                System.out.print(l + "  ");
+                num--;
+                l--;
+            }
+            copy++;
+            System.out.println();
+        }
+        l=1; 
+        while(l<=copy)
+        {
+            System.out.print(l  +"  ");
+            l++;
+        }
+        n-=1;
+        while(n>0)
+        {
+            System.out.print(n + "  ");
+            n--;
+        }
+    }
+}                      
