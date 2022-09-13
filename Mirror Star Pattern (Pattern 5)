@@ -1,0 +1,67 @@
+Take N (number of rows - only odd numbers allowed), print the following pattern (for N = 5).
+
+      *
+   *  *  *  
+*  *  *  *  *  
+   *  *  *
+      *
+  
+  
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner a=new Scanner(System.in);
+        int n;
+        n=a.nextInt();
+        int copy,q,star,s=1,r,space;
+        q=n/2;
+        r=n/2;
+        copy=n;
+        while(q!=0)
+        {
+            star=q;
+            while (star!=0)
+            {
+                System.out.print("  ");
+                star--;
+            }
+            space=s;
+            while(space!=0)
+            {
+                System.out.print("* ");
+                space--;
+            }
+            System.out.println();
+            q--;
+            s+=2;
+        }
+        while (copy!=0)
+        {
+            System.out.print("* ");
+            copy--;
+        }   
+        System.out.println();
+        s=1;
+        while(r!=0)
+        {
+            star=s;
+            while(star!=0)
+            {
+                System.out.print("  ");
+                star--;
+            }
+            space=n-(s*2);
+            while(space!=0)
+            {
+                System.out.print("* ");
+                space--;
+            }
+            s+=1;
+            r--;
+            System.out.println();
+        }   
+    }  
+}
+
