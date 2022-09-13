@@ -1,0 +1,95 @@
+Take N as input. For a value of N=7, we wish to draw the following pattern :
+
+                            1 
+                        2 1   1 2 
+                    3 2 1       1 2 3 
+                4 3 2 1           1 2 3 4 
+                    3 2 1       1 2 3 
+                        2 1   1 2
+                            1 
+// N is always is odd .                            
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+       Scanner a=new Scanner(System.in);
+       int n;
+       n=a.nextInt();
+       if(n%2!=0){
+       int p=n-1;
+       int space1,space2,num,l=1,k=-1,num2=-1;
+       for(int i=1;i<=(n/2)+1;i++)
+       {
+            space1=p;
+            while(space1>0)
+            {
+                System.out.print("  ");
+                space1--;
+            }
+            p=p-2;
+            num=i;
+            while(num!=0)
+            {
+                System.out.print(num + " ");
+                num--;
+            }
+            space2=k;
+            while(space2>0)
+            {
+                System.out.print("  ");
+                space2--;
+            }
+            k+=2;
+            while(num2<=i && num2>0)
+            {
+                System.out.print(num2 + " ");
+                num2++;
+            }
+            num2=1;
+            System.out.println();  
+        }
+        l=n/2;
+        k=k-4;
+        p=2;
+        for(int i=1;i<=(n/2)-1;i++)
+        {
+            space1=p;
+            while(space1>0)
+            {
+                System.out.print("  ");
+                space1--;
+            }
+            p=p+2;
+            num=l;
+            while(num!=0)
+            {
+                System.out.print(num + " ");
+                num--;
+            }
+            space2=k;
+            while(space2>0)
+            {
+                System.out.print("  ");
+                space2--;
+            }
+            k-=2;
+            num2=1;
+            while(num2<=l)
+            {
+                System.out.print(num2 + " ");
+                num2++;
+            }
+            l--;
+            System.out.println();  
+        }
+        n--;
+        while(n!=0)
+        {
+            System.out.print("  ");
+            n--;
+        }
+        System.out.print("1");
+
+    }}
+}
