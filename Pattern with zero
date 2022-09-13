@@ -1,0 +1,29 @@
+Take N (number of rows), print the following pattern (for N = 5)
+1
+2 2
+3 0 3
+4 0 0 4
+5 0 0 0 5
+
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+         Scanner a=new Scanner(System.in);
+        int n=a.nextInt();
+        int j;
+        for(int i=1;i<=n;i++)
+        {
+            j=i;
+            while(j!=0)
+            {
+                if(j==1 || j==i)
+                System.out.print(i + "   ");
+                else
+                System.out.print("0   ");
+                j--;
+            }
+            System.out.println();
+        }
+
+    }
+}
