@@ -1,0 +1,50 @@
+Given coefficients of a quadratic equation , you need to print the nature of the roots (Real and Distinct , Real and Equal or Imaginary) and the roots.
+If Real and Distinct , print the roots in increasing order.
+If Real and Equal , print the same repeating root twice
+If Imaginary , no need to print the roots.
+
+
+Note : Print only the integer part of the roots.
+
+Input First line contains three integer coefficients a,b,c for the equation ax^2 + bx + c = 0.
+
+1 -11 28
+
+
+Output Output contains one/two lines. First line contains nature of the roots .The next line contains roots(in non-decreasing order) separated by a space if they exist. 
+If roots are imaginary do not print the roots. Output the integer values for the roots.
+
+Real and Distinct
+4 7
+
+import java.util.*;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner n=new Scanner(System.in);
+        int a,b,c;
+        a=n.nextInt();
+        b=n.nextInt();
+        c=n.nextInt();
+        double p=(b*b)-(4*a*c);
+        int k=(int)Math.sqrt(p);
+        int d=-b/(2*a);
+        if(p==0){
+            System.out.println("Real and Equal"); 
+            System.out.println(d + " "+ d);
+        }
+        else if(p<0){
+            System.out.println("Imaginary");
+        }
+        else {
+            System.out.println("Real and Distinct");
+            int root1=(-b-k)/(2*a);
+            int root2=(-b+k)/(2*a);
+            if(root1>root2)
+                System.out.println(root2 + " "+root1);
+            else 
+                System.out.println(root1 + " "+ root2);
+        }       
+    }
+}
